@@ -31,7 +31,7 @@ For each of the k
 
 Input
 The first line of the input contains integers n and k
- (0<n,k ≤ 105), the length of the array and the number of queries. The second line contains n
+ (0 < n,k ≤ 105), the length of the array and the number of queries. The second line contains n
  elements of the array, sorted in non-decreasing order. The third line contains k
  queries. All array elements and queries are integers, each of which does not exceed 2⋅109
  in absolute value.
@@ -40,4 +40,16 @@ Output
 For each of the k
  queries, print the maximum index of an array element not greater than the given one. If there are none, print 0.
 
- 
+# Q3 -> Given an array of n numbers, sorted in non-decreasing order, and k queries. For each query, print the minimum index of an array element not less than the given one.
+
+Input
+The first line of the input contains integers n
+ and k
+ (0 < n,k ≤ 105), the length of the array and the number of queries. The second line contains n
+ elements of the array, sorted in non-decreasing order. The third line contains k
+ queries. All array elements and queries are integers, each of which does not exceed 2⋅109
+ in absolute value.
+
+Output
+For each of the k
+ queries, print the minimum index of an array element not less than the given one. If there are none, print n+1.
