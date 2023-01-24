@@ -23,4 +23,21 @@ For each of the k
 
 ## 2-> If 2nd case appears then we have to move our right pointer to mid-1  right=mid-1.
 
-## 3-> If 3rd case appears then we have to move our left pointer to mid+1  left=mid+1.
+## 3-> If 3rd case appears then we have to move our left pointer to mid+1  left=mid+1c .
+
+
+
+# Q2 -> Given an array of n numbers, sorted in non-decreasing order, and k queries. For each query, print the maximum index of an array element not greater than the given one.
+
+Input
+The first line of the input contains integers n and k
+ (0<n,k ≤ 105), the length of the array and the number of queries. The second line contains n
+ elements of the array, sorted in non-decreasing order. The third line contains k
+ queries. All array elements and queries are integers, each of which does not exceed 2⋅109
+ in absolute value.
+
+Output
+For each of the k
+ queries, print the maximum index of an array element not greater than the given one. If there are none, print 0.
+
+ 
