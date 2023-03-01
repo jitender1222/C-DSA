@@ -64,6 +64,33 @@ void printData(NodeList* head){
         temp=temp->next;
     }
 }
+
+NodeList* findNode(int pos,NodeList* head){
+
+    NodeList *temp=head;
+
+    int curr=0;
+
+    while(curr<pos-1){
+        curr++;
+        temp=temp->next;
+    }
+
+    return temp;
+
+}
+
+void insertNodeMiddle(int pos1,int pos2,int val,NodeList* head){
+
+    NodeList* temp1=findNode(pos1,head);
+    NodeList* temp2=findNode(pos2,head);    
+
+    NodeList* newNode=new NodeList(val);
+
+    temp1->next=newNode;
+    newNode->next=temp2;
+}
+
 int main(){
 
     NodeList* head=NULL;    
@@ -86,6 +113,7 @@ insertNodehead(head,tail,20);
 insertNodehead(head,tail,10);
 
 
-printData(head);
+insertNodeMiddle(4,5,35,head);
 
+printData(head);
 }
