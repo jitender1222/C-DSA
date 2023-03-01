@@ -16,6 +16,8 @@ class NodeList{
     }
 };
 
+// insert the node at the end 
+
 void insertNodeEnd(NodeList *&head, NodeList *&tail,int data){
 
     // create a new node 
@@ -34,6 +36,7 @@ void insertNodeEnd(NodeList *&head, NodeList *&tail,int data){
 
 }
 
+// insert the node at the head
 
 void insertNodehead(NodeList *&head, NodeList *&tail,int data){
 
@@ -53,6 +56,7 @@ void insertNodehead(NodeList *&head, NodeList *&tail,int data){
 
 }
 
+// print the node
 
 void printData(NodeList* head){
 
@@ -64,6 +68,9 @@ void printData(NodeList* head){
         temp=temp->next;
     }
 }
+
+
+// find the node 
 
 NodeList* findNode(int pos,NodeList* head){
 
@@ -80,6 +87,8 @@ NodeList* findNode(int pos,NodeList* head){
 
 }
 
+// find the middle node
+
 void insertNodeMiddle(int pos1,int pos2,int val,NodeList* head){
 
     NodeList* temp1=findNode(pos1,head);
@@ -91,16 +100,45 @@ void insertNodeMiddle(int pos1,int pos2,int val,NodeList* head){
     newNode->next=temp2;
 }
 
+
+// find the Prev Node
+
+NodeList *findPrev(NodeList *node,NodeList* head){
+
+    NodeList* temp=head;
+    NodeList* prev=NULL;
+
+    while(temp!=node){
+
+        prev=temp;
+        temp=temp->next;
+    }
+
+    return prev;
+
+}
+
+// delete the node 
+
+void deleteNode(int pos,NodeList* head,NodeList*& end){
+
+    NodeList *node=findNode(pos,head);
+
+    NodeList *prev=findPrev(node,head);
+
+    prev->next=node->next;
+
+    if(node==end){
+        end=prev;
+    }
+    delete(node);
+}
+
+
 int main(){
 
     NodeList* head=NULL;    
     NodeList* tail=NULL;
-
-// create a new node
-
-// NodeList* newNode=new NodeList(10);
-
-// cout<<newNode->data;
 
 insertNodeEnd(head,tail,40);
 insertNodeEnd(head,tail,50);
@@ -115,5 +153,20 @@ insertNodehead(head,tail,10);
 
 insertNodeMiddle(4,5,35,head);
 
+cout<<"before deleting"<<endl;
 printData(head);
+
+cout<<'\n'<<"tail first"<<endl;
+
+cout<<tail->data;
+
+deleteNode(9,head,tail);
+
+cout<<"\n";
+cout<<"After deleting"<<endl;
+printData(head);
+
+cout<<'\n';
+cout<<tail->data;
+
 }
