@@ -111,9 +111,11 @@ int main(){
 
     printNode(head2);
 
-    Node* ans=MergeList(head1,head2);
+    Node* ans=MergeList(head1,head2); // Tc-> o(l1+l2) Sc-> o(l1+l2)
 
     cout<<endl;
     cout<<"MERGE LIST"<<endl;
     printNode(ans);
+
+
 }
