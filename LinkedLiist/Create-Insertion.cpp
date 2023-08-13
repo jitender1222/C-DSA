@@ -135,6 +135,17 @@ void deleteNode(int pos,NodeList* head,NodeList*& end){
 }
 
 
+// delete a value 
+
+void deleteValue(int pos,NodeList* head){
+
+    NodeList* node=findNode(pos,head);
+
+    swap(node->data,node->next->data);
+    node->next=node->next->next;
+}
+
+
 int main(){
 
     NodeList* head=NULL;    
@@ -154,19 +165,25 @@ insertNodehead(head,tail,10);
 insertNodeMiddle(4,5,35,head);
 
 cout<<"before deleting"<<endl;
-printData(head);
+printData(head);             // print data
 
-cout<<'\n'<<"tail first"<<endl;
+// cout<<'\n'<<"tail first"<<endl;
 
-cout<<tail->data;
+// cout<<tail->data;         // print tail value
 
-deleteNode(9,head,tail);
+// deleteNode(9,head,tail);  //delete node
 
-cout<<"\n";
-cout<<"After deleting"<<endl;
-printData(head);
+// cout<<"\n";
+// cout<<"After deleting"<<endl;
+// printData(head);         // print head
 
-cout<<'\n';
-cout<<tail->data;
+// cout<<'\n';
+// cout<<tail->data;       // print tail value
+
+
+deleteValue(5,head);
+
+cout<<"After replacing"<<endl;
+printData(head); 
 
 }

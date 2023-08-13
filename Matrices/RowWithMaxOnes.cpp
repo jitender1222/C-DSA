@@ -29,8 +29,8 @@ for(int i=0;i<row;i++){
 
     if(ones<count){
         maxOne=i;
+        ones=count;
     }
-    ones=max(ones,count);
 }
 
 if(noOne==-1){
