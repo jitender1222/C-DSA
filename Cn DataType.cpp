@@ -1,4 +1,4 @@
-int dataTypes(string type)
+// int dataTypes(string type)
 {
 
     if (type == "Integer" || type == "Float")
