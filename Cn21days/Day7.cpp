@@ -10,7 +10,7 @@ string lookAndSaySequence(int n)
     if (n == 2)
         return "11";
 
-    string ans = "11";
+    String ans = "11";
 
     for (int i = 3; i <= n; i++)
     {
