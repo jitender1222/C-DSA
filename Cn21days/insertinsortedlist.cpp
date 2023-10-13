@@ -28,7 +28,5 @@ public:
             x = x->next;
             temp = temp->next;
         }
-        temp->next = p; // for last node
-        return head;
-    }
+        
 };
